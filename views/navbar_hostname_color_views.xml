@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_navbar_hostname_color_tree" model="ir.ui.view">
+        <field name="name">navbar.hostname.color.tree</field>
+        <field name="model">navbar.hostname.color</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="hostname"/>
+                <field name="color"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_navbar_hostname_color_form" model="ir.ui.view">
+        <field name="name">navbar.hostname.color.form</field>
+        <field name="model">navbar.hostname.color</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="hostname"/>
+                        <field name="color"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

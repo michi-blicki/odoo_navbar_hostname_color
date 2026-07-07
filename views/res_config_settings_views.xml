@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_navbar_hostname_color" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.navbar.hostname.color</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='general_settings']" position="inside">
+                <block title="Navbar Hostname Color" name="navbar_hostname_color_block">
+                    <div class="text-muted mb-2">
+                        <span>Current Hostname: </span>
+                        <field name="current_hostname" readonly="1" class="oe_inline fw-bold"/>
+                    </div>
+
+                    <setting
+                        id="default_navbar_hostname_color_setting"
+                        string="Default Navbar Color"
+                        help="Used when no explicit hostname match is configured."
+                    >
+                        <field name="navbar_default_color" placeholder="#875A7B"/>
+                    </setting>
+
+                    <setting
+                        id="navbar_hostname_color_ids_setting"
+                        string="Hostname Colors"
+                        help="Define one color per hostname."
+                    >
+                        <field name="navbar_hostname_color_ids" nolabel="1">
+                            <list editable="bottom">
+                                <field name="hostname"/>
+                                <field name="color"/>
+                            </list>
+                        </field>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
